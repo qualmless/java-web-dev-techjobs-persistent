@@ -1,6 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
