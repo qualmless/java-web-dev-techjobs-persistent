@@ -11,6 +11,14 @@ public class Skill extends AbstractEntity {
     @Size(min = 3, max = 1000, message = "Keep skill description under 1000 characters!")
     private String skill;
 
+    public String getSkill() {
+        return skill;
+    }
+
+    public void setSkill(String skill) {
+        this.skill = skill;
+    }
+
     public Skill (){}
 
 }
