@@ -42,6 +42,14 @@ public class EmployerController {
         return "redirect:";
     }
 
+    @GetMapping("")
+    public String displayEmployerIndex(Model model) {
+        model.addAttribute("title", "Employer Index");
+        model.addAttribute("employers", employerRepository.findAll());
+//        employerRepository.findAll();
+        return "employers/index";
+    }
+
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model,
                                       @PathVariable int employerId) {
@@ -53,6 +61,7 @@ public class EmployerController {
             model.addAttribute("employer", employer);
             return "employers/view";
         }
+
         else {
             return "redirect:../";
         }
