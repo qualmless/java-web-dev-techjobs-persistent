@@ -48,7 +48,7 @@ public class HomeController {
             model.addAttribute("title", "Add Job");
             return "add";
         }
-
+        model.addAttribute("employer",employer);
         return "redirect:";
     }
 
