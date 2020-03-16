@@ -1,7 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ public class Skill extends AbstractEntity {
     private String description;
 
     @ManyToMany(mappedBy = "skills")
-//    @JoinColumn (name = "skills")
     private List<Job> jobs = new ArrayList<>();
 
     public String getDescription() {
