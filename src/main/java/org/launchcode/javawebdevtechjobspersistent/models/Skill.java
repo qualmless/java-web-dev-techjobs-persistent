@@ -2,7 +2,7 @@ package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +13,8 @@ public class Skill extends AbstractEntity {
     @Size(max = 1000, message = "Keep skill description under 1000 characters!")
     private String description;
 
-    @OneToMany
-    @JoinColumn
+    @ManyToMany(mappedBy = "skills")
+//    @JoinColumn (name = "skills")
     private List<Job> jobs = new ArrayList<>();
 
     public String getDescription() {
@@ -26,4 +26,6 @@ public class Skill extends AbstractEntity {
     }
 
     public Skill (){}
+
+
 }
