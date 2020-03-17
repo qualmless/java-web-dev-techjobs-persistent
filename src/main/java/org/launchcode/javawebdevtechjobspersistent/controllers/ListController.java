@@ -34,21 +34,14 @@ public class ListController {
     static HashMap<String, Object> tableChoices = new HashMap<>();
 
     public ListController () {
-
-        columnChoices.put("all", "All");
+        columnChoices.put("all", "View All");
         columnChoices.put("employer", "Employer");
         columnChoices.put("skills", "Skills");
-
-        tableChoices.put("all", "View All");
-        tableChoices.put("employer", employerRepository.findAll());
-        tableChoices.put("skills", skillRepository.findAll());
-
     }
 
     @RequestMapping("")
     public String list(Model model) {
         model.addAttribute("columns", columnChoices);
-        model.addAttribute("tableChoices", tableChoices);
         model.addAttribute("all",jobRepository.findAll());
         model.addAttribute("employers", employerRepository.findAll());
         model.addAttribute("skills", skillRepository.findAll());
