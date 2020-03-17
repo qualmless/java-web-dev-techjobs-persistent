@@ -47,7 +47,7 @@ public class JobData {
         } else if (fieldName.equals("employer")){
             theValue = job.getEmployer().toString();
         } else {
-            theValue = job.toString();
+            theValue = job.getSkills().toString();
         }
 
         return theValue;
@@ -56,7 +56,8 @@ public class JobData {
     /**
      * Search all Job fields for the given term.
      *
-     * @param value The search term to look for.
+     * @param value The seari
+     *              ch term to look for.
      * @param allJobs The list of jobs to search.
      * @return      List of all jobs with at least one field containing the value.
      */
