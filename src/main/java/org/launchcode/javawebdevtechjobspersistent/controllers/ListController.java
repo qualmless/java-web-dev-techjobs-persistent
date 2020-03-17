@@ -31,12 +31,11 @@ public class ListController {
     private EmployerRepository employerRepository;
 
     static HashMap<String, String> columnChoices = new HashMap<>();
-    static HashMap<String, Object> tableChoices = new HashMap<>();
 
     public ListController () {
         columnChoices.put("all", "View All");
         columnChoices.put("employer", "Employer");
-        columnChoices.put("skills", "Skills");
+        columnChoices.put("skill", "Skills");
     }
 
     @RequestMapping("")
@@ -49,7 +48,9 @@ public class ListController {
     }
 
     @RequestMapping(value = "jobs")
-    public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam String value) {
+    public String listJobsByColumnAndValue(Model model,
+                                           @RequestParam String column,
+                                           @RequestParam String value) {
         Iterable<Job> jobs;
         if (column.toLowerCase().equals("all")){
             jobs = jobRepository.findAll();
